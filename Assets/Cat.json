@@ -1,0 +1,32 @@
+{
+    "name": "Cute Cat Graffiti",
+    "description": "It's a cat. Also, it is very cute. I use Graffiti for this cat. what do you think?",
+    "image": "ipfs://QmZwSN9rvVgTQ3TVG2XDn4hStx3L3Fj9cD4yYwz7EgJqh3",
+    "type": "image/png",
+    "creator": "Unknown",
+    "files": [
+        {
+            "uri": "https://bafybeifmlhwvkongrxera6rkjzafjd6cm4mym4zswyqccsywcx2mnygdbi.ipfs.cf-ipfs.com/",
+            "type": "image/jpg"
+        },
+        {
+            "uri": "ipfs://QmZwSN9rvVgTQ3TVG2XDn4hStx3L3Fj9cD4yYwz7EgJqh3",
+            "type": "image/jpg"
+        }
+    ],
+    "attributes": [
+        {
+            "trait_type": "Animal",
+            "value": "cat"
+        },
+        {
+            "trait_type": "Graffiti",
+            "display_type": "colorful"
+        }
+    ],
+    "localization": {
+        "uri": "",
+        "default": "en",
+        "locales": ["", ""]
+    }
+}

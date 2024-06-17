@@ -1,0 +1,32 @@
+{
+    "name": "Dog Graffiti",
+    "description": "It's a dog. Also, it is very different. I use Graffiti for this dog. what do you think?",
+    "image": "ipfs://QmWB54v6cjcRwLLpNiTY6NjMzfPkmSeRHjuYjWFeKVeyed",
+    "type": "image/png",
+    "creator": "Unknown",
+    "files": [
+        {
+            "uri": "https://bafybeidune5nt47clf3vde57sw2qkny2s72ovgjxb465jobrcorbqwp2ny.ipfs.cf-ipfs.com/",
+            "type": "image/jpg"
+        },
+        {
+            "uri": "ipfs://QmWB54v6cjcRwLLpNiTY6NjMzfPkmSeRHjuYjWFeKVeyed",
+            "type": "image/jpg"
+        }
+    ],
+    "attributes": [
+        {
+            "trait_type": "Animal",
+            "value": "Dog"
+        },
+        {
+            "trait_type": "Graffiti",
+            "display_type": "colorful"
+        }
+    ],
+    "localization": {
+        "uri": "",
+        "default": "en",
+        "locales": ["", ""]
+    }
+}

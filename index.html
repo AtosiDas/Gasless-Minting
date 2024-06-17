@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Transactions</title>
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+        type="application/javascript"></script>
+</head>
+<body>
+    
+    <script>
+        const SIGNING_DOMAIN_NAME = "Gasless tx"
+        const SIGNING_DOMAIN_VERSION = "1"
+
+        class SignHelper {
+            constructor(contractAddress, chainId, signer) {
+                this.contractAddress = contractAddress
+                this.chainId = chainId
+                this.signer = signer
+            }
+
+            async createSignature(id, name, uri) {
+                const obj = {id:id, name:name, uri:uri}
+                const domain = await this._signingDomain()
+                const types = {
+                    Txs: [
+                        {name: "id", type: "uint256"},
+                        {name: "name", type: "string"},
+                        {name: "uri", type: "string"}
+                    ]
+                }
+                const signature = await this.signer._signTypedData(domain, types, obj)
+                return {...obj, signature}
+            }
+
+            async _signingDomain() {
+                if(this._domain != null) {
+                    return this._domain
+                }
+                const chainId = await this.chainId
+                this._domain = {
+                    name: SIGNING_DOMAIN_NAME,
+                    version: SIGNING_DOMAIN_VERSION,
+                    verifyingContract: this.contractAddress,
+                    chainId
+                }
+                return this._domain
+            }
+
+            static async getSign(contractAddress, chainId, id, name, uri) {
+                let provider = new ethers.providers.Web3Provider(window.ethereum);
+
+                console.log(provider);
+
+                await provider.send("eth_requestAccounts", []);
+
+                const signer = provider.getSigner();
+
+                await signer.getAddress();
+                
+                console.log(await signer.getAddress());
+                let lm = new SignHelper(contractAddress, chainId, signer);
+                let vouchar = await lm.createSignature(id, name, uri);
+                //console.log(vouchar);
+                return vouchar;
+            }
+        }
+    </script>
+</body>
+</html>

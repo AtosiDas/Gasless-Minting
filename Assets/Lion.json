@@ -1,0 +1,32 @@
+{
+    "name": "Cute Lion Graffiti",
+    "description": "It's a lion. Also, it is very cute. I use Graffiti for this lion. what do you think?",
+    "image": "ipfs://QmfSRW4G9u2sen7swaK18jTTCkEFv6VbZjiLj7By87ojmK",
+    "type": "image/png",
+    "creator": "Unknown",
+    "files": [
+        {
+            "uri": "https://bafybeih6ce5ieqmlzv7vvpvpk232uor3g225a6lbbdzqpz7p7va3oajp4i.ipfs.cf-ipfs.com/",
+            "type": "image/jpg"
+        },
+        {
+            "uri": "ipfs://QmfSRW4G9u2sen7swaK18jTTCkEFv6VbZjiLj7By87ojmK",
+            "type": "image/jpg"
+        }
+    ],
+    "attributes": [
+        {
+            "trait_type": "Flower",
+            "value": "Flower"
+        },
+        {
+            "trait_type": "Graffiti",
+            "display_type": "colorful"
+        }
+    ],
+    "localization": {
+        "uri": "",
+        "default": "en",
+        "locales": ["", ""]
+    }
+}
