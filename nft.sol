@@ -30,7 +30,8 @@ contract Token is
         Txs memory txs,
         bytes memory signature
     ) public {
-        require(check(txs, signature) == owner(), "Voucher invalid");
+        require(msg.sender == owner(), "Permission denied");
+        require(check(txs, signature) == to, "Voucher invalid");
         _tokenIdCounter.increment();
         uint256 tokenId = _tokenIdCounter.current();
         _safeMint(to, tokenId);
